@@ -1,5 +1,9 @@
 FROM gradle:6.3.0-jdk14
 
+#------------------- cross compile dependencies -------------------------------
+RUN apt-get update --fix-missing
+RUN apt-get install -y binutils
+
 #------------------- install JDKs for Windows and Mac -------------------------
 RUN mkdir -p /usr/java/win
 WORKDIR /usr/java/win
