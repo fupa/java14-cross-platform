@@ -21,3 +21,7 @@ RUN mv jdk-14.0.1.jdk jdk-14.0.1
 RUN wget --no-verbose --output-document javafx-14-0-1-jmods-mac.zip https://gluonhq.com/download/javafx-14-0-1-jmods-mac
 RUN unzip -o javafx-14-0-1-jmods-mac.zip && rm javafx-14-0-1-jmods-mac.zip
 #------------------------------------------------------------------------------
+
+COPY entrypoint.sh entrypoint.sh
+
+ENTRYPOINT [ "/entrypoint.sh" ]
